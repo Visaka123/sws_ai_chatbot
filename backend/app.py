@@ -41,8 +41,9 @@ embedding = HuggingFaceEmbeddings(
 
 # Vector DB
 
+# Update this path in your backend/app.py
 db = Chroma(
-    persist_directory="chroma_db",
+    persist_directory=os.path.join("backend", "chroma_db"),
     embedding_function=embedding
 )
 
